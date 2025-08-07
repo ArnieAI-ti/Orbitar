@@ -23,7 +23,7 @@ const styles = (theme) => ({
     width: 200,
   },
   blackList: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.background.paper,
     height: "100%",
   },
   noDecoration: {
@@ -85,10 +85,10 @@ function NavigationDrawer(props) {
                   disableRipple
                   disableTouchRipple
                 >
-                  <ListItemIcon>{element.icon}</ListItemIcon>
+                  <ListItemIcon style={{ color: "white" }}>{element.icon}</ListItemIcon>
                   <ListItemText
                     primary={
-                      <Typography variant="subtitle1" className="text-white">
+                      <Typography variant="subtitle1" style={{ color: "white" }}>
                         {element.name}
                       </Typography>
                     }
@@ -99,10 +99,10 @@ function NavigationDrawer(props) {
           }
           return (
             <ListItem button key={element.name} onClick={element.onClick}>
-              <ListItemIcon>{element.icon}</ListItemIcon>
+              <ListItemIcon style={{ color: "white" }}>{element.icon}</ListItemIcon>
               <ListItemText
                 primary={
-                  <Typography variant="subtitle1" className="text-white">
+                  <Typography variant="subtitle1" style={{ color: "white" }}>
                     {element.name}
                   </Typography>
                 }

@@ -84,43 +84,43 @@ function NavBar(props) {
     {
       link: "/",
       name: "Inicio",
-      icon: <HomeIcon className="text-white" />,
+      icon: <HomeIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("root") // Asumiendo que el id del inicio es 'root'
     },
     {
       link: "#vision-section",
       name: "¿Qué es?",
-      icon: <RocketLaunchIcon className="text-white" />,
+      icon: <RocketLaunchIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("vision-section")
     },
     {
       link: "#problem-section",
       name: "Desafíos",
-      icon: <TrendingUpIcon className="text-white" />,
+      icon: <TrendingUpIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("problem-section", 120) // Ajuste de 120px más arriba
     },
     {
       link: "#how-it-works-section",
       name: "Funcionamiento",
-      icon: <HelpOutlineIcon className="text-white" />,
+      icon: <HelpOutlineIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("how-it-works-section")
     },
     {
       link: "#objectives-section",
       name: "Objetivos",
-      icon: <TrackChangesIcon className="text-white" />,
+      icon: <TrackChangesIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("objectives-section")
     },
     {
       link: "#feature-section",
       name: "Características",
-      icon: <LightbulbOutlinedIcon className="text-white" />,
+      icon: <LightbulbOutlinedIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("feature-section")
     },
     {
       link: "#application-section",
       name: "Casos de Uso",
-      icon: <AppsIcon className="text-white" />,
+      icon: <AppsIcon style={{ color: "white" }} />,
       onClick: () => scrollToSection("application-section")
     }
   ];
@@ -149,7 +149,7 @@ function NavBar(props) {
                 onClick={handleMobileDrawerOpen}
                 aria-label="Open Navigation"
                 size="large">
-                <MenuIcon color="primary" />
+                <MenuIcon style={{ color: "#00BFFF" }} />
               </IconButton>
             </Hidden>
             <Hidden mdDown>
@@ -208,8 +208,3 @@ NavBar.propTypes = {
 };
 
 export default withStyles(styles, { withTheme: true })(memo(NavBar));
-
-
-
-
-
