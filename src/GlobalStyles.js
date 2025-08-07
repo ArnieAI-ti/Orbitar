@@ -2,6 +2,12 @@ import withStyles from '@mui/styles/withStyles';
 
 const styles = theme => ({
   "@global": {
+    "*": {
+      cursor: "default", // Establece el cursor predeterminado para todo
+    },
+    "a, button, input[type='submit'], input[type='button'], input[type='reset'], input[type='image'], label[for], select, textarea": {
+      cursor: "pointer", // Restaura el cursor de mano para elementos interactivos
+    },
     /**
      * Disable the focus outline, which is default on some browsers like
      * chrome when focusing elements

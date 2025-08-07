@@ -1,18 +1,19 @@
-import { createTheme, responsiveFontSizes, adaptV4Theme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // colors
-const primary = "#b3294e";
-const secondary = "#4829B2";
-const black = "#343a40";
-const darkBlack = "rgb(36, 40, 44)";
-const background = "#f5f5f5";
-const warningLight = "rgba(253, 200, 69, .3)";
-const warningMain = "rgba(253, 200, 69, .5)";
-const warningDark = "rgba(253, 200, 69, .7)";
+const primary = "#61DAFB"; // Un cian eléctrico para acentos
+const secondary = "#00BFFF"; // Otro tono de azul brillante
+const black = "#ffffff"; // El texto principal será blanco
+const darkBlack = "#f2f2f2"; // Un gris muy claro para textos secundarios
+const background = "#121826"; // Fondo azul noche
+const paper = "#1A2035"; // Un poco más claro para superficies como tarjetas
+const warningLight = "rgba(255, 234, 0, .3)";
+const warningMain = "rgba(255, 234, 0, .5)";
+const warningDark = "rgba(255, 234, 0, .7)";
 
 // border
-const borderWidth = 2;
-const borderColor = "rgba(0, 0, 0, 0.13)";
+const borderWidth = 1;
+const borderColor = "rgba(255, 255, 255, 0.12)";
 
 // breakpoints
 const xl = 1920;
@@ -24,104 +25,136 @@ const xs = 0;
 // spacing
 const spacing = 8;
 
-const theme = createTheme(adaptV4Theme({
+const theme = createTheme({
   palette: {
+    mode: 'dark', // Habilitar el modo oscuro de Material-UI
     primary: { main: primary },
     secondary: { main: secondary },
     common: {
       black,
-      darkBlack
+      darkBlack,
     },
     warning: {
       light: warningLight,
       main: warningMain,
-      dark: warningDark
+      dark: warningDark,
     },
-    // Used to shift a color's luminance by approximately
-    // two indexes within its tonal palette.
-    // E.g., shift from Red 500 to Red 300 or Red 700.
-    tonalOffset: 0.2,
     background: {
-      default: background
+      default: background,
+      paper: paper,
     },
-    spacing
+    text: {
+      primary: "#ffffff",
+      secondary: "rgba(255, 255, 255, 0.7)",
+      disabled: "rgba(255, 255, 255, 0.5)",
+    },
+    spacing,
   },
   breakpoints: {
-    // Define custom breakpoint values.
-    // These will apply to Material-UI components that use responsive
-    // breakpoints, such as `Grid` and `Hidden`. You can also use the
-    // theme breakpoint functions `up`, `down`, and `between` to create
-    // media queries for these breakpoints
     values: {
       xl,
       lg,
       md,
       sm,
-      xs
-    }
+      xs,
+    },
   },
   border: {
     borderColor: borderColor,
-    borderWidth: borderWidth
+    borderWidth: borderWidth,
   },
-  overrides: {
+  components: {
     MuiExpansionPanel: {
-      root: {
-        position: "static"
-      }
+      styleOverrides: {
+        root: {
+          position: "static",
+        },
+      },
     },
     MuiTableCell: {
-      root: {
-        paddingLeft: spacing * 2,
-        paddingRight: spacing * 2,
-        borderBottom: `${borderWidth}px solid ${borderColor}`,
-        [`@media (max-width:  ${sm}px)`]: {
-          paddingLeft: spacing,
-          paddingRight: spacing
-        }
-      }
+      styleOverrides: {
+        root: {
+          paddingLeft: spacing * 2,
+          paddingRight: spacing * 2,
+          borderBottom: `${borderWidth}px solid ${borderColor}`,
+          [`@media (max-width:  ${sm}px)`]: {
+            paddingLeft: spacing,
+            paddingRight: spacing,
+          },
+        },
+      },
     },
     MuiDivider: {
-      root: {
-        backgroundColor: borderColor,
-        height: borderWidth
-      }
+      styleOverrides: {
+        root: {
+          backgroundColor: borderColor,
+          height: borderWidth,
+        },
+      },
     },
     MuiPrivateNotchedOutline: {
-      root: {
-        borderWidth: borderWidth
-      }
+      styleOverrides: {
+        root: {
+          borderWidth: borderWidth,
+        },
+      },
     },
     MuiListItem: {
-      divider: {
-        borderBottom: `${borderWidth}px solid ${borderColor}`
-      }
+      styleOverrides: {
+        divider: {
+          borderBottom: `${borderWidth}px solid ${borderColor}`,
+        },
+      },
     },
     MuiDialog: {
-      paper: {
-        width: "100%",
-        maxWidth: 430,
-        marginLeft: spacing,
-        marginRight: spacing
-      }
+      styleOverrides: {
+        paper: {
+          width: "100%",
+          maxWidth: 430,
+          marginLeft: spacing,
+          marginRight: spacing,
+        },
+      },
     },
     MuiTooltip: {
-      tooltip: {
-        backgroundColor: darkBlack
-      }
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: darkBlack,
+        },
+      },
     },
     MuiExpansionPanelDetails: {
-      root: {
-        [`@media (max-width:  ${sm}px)`]: {
-          paddingLeft: spacing,
-          paddingRight: spacing
-        }
-      }
-    }
+      styleOverrides: {
+        root: {
+          [`@media (max-width:  ${sm}px)`]: {
+            paddingLeft: spacing,
+            paddingRight: spacing,
+          },
+        },
+      },
+    },
   },
   typography: {
-    useNextVariants: true
-  }
-}));
+    fontFamily: "'Roboto', sans-serif",
+    h1: {
+      fontWeight: 700,
+    },
+    h2: {
+      fontWeight: 700,
+    },
+    h3: {
+      fontWeight: 700,
+    },
+    h4: {
+      fontWeight: 700,
+    },
+    h5: {
+      fontWeight: 700,
+    },
+    h6: {
+      fontWeight: 600,
+    },
+  },
+});
 
 export default responsiveFontSizes(theme);

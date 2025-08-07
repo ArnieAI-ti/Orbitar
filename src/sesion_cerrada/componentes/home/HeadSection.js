@@ -4,10 +4,14 @@ import classNames from "classnames";
 import { Grid, Typography, Card, Button, Hidden, Box } from "@mui/material";
 import withStyles from "@mui/styles/withStyles";
 import WaveBorder from "../../../shared/components/WaveBorder";
-import ZoomImage from "../../../shared/components/ZoomImage";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const styles = (theme) => ({
+  gradientText: {
+    background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.secondary.main} 90%)`,
+    "-webkit-background-clip": "text",
+    "-webkit-text-fill-color": "transparent",
+  },
   extraLargeButtonLabel: {
     fontSize: theme.typography.body1.fontSize,
     [theme.breakpoints.up("sm")]: {
@@ -58,14 +62,13 @@ const styles = (theme) => ({
   },
   wrapper: {
     position: "relative",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.background.default,
     paddingBottom: theme.spacing(2),
   },
   image: {
-    maxWidth: "100%",
-    verticalAlign: "middle",
-    borderRadius: theme.shape.borderRadius,
-    boxShadow: theme.shadows[4],
+    width: "100%",
+    height: "100%",
+    border: "none",
   },
   container: {
     marginTop: theme.spacing(6),
@@ -114,9 +117,8 @@ function HeadSection(props) {
                       height="100%"
                     >
                       <Box mb={4}>
-                        <Typography variant={isWidthUpLg ? "h3" : "h4"}>
-                          Free Template for building a SaaS app using
-                          Material-UI
+                        <Typography variant={isWidthUpLg ? "h3" : "h4"} className={classes.gradientText}>
+                          Orbitar: Sistema de Automatización Visual Inteligente
                         </Typography>
                       </Box>
                       <div>
@@ -125,29 +127,28 @@ function HeadSection(props) {
                             variant={isWidthUpLg ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt
+                            Transformamos datos complejos en diagramas visuales dinámicos y comprensibles. Tu sistema, a la vista de todos.
                           </Typography>
                         </Box>
                         <Button
                           variant="contained"
-                          color="secondary"
+                          color="primary"
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
-                          href="https://github.com/dunky11/react-saas-template"
+                          href="#vision-section"
                         >
-                          Download from GitHub
+                          Descubre Qué es Orbitar
                         </Button>
                       </div>
                     </Box>
                   </Grid>
                   <Hidden mdDown>
                     <Grid item md={6}>
-                      <ZoomImage
-                        src={`${process.env.PUBLIC_URL}/images/logged_out/headerImage.jpg`}
+                      <iframe
+                        title="header-animation"
+                        src={`${process.env.PUBLIC_URL}/images/logged_out/headerImage.html`}
                         className={classes.image}
-                        alt="header example"
                       />
                     </Grid>
                   </Hidden>
@@ -158,8 +159,8 @@ function HeadSection(props) {
         </div>
       </div>
       <WaveBorder
-        upperColor={theme.palette.secondary.main}
-        lowerColor="#FFFFFF"
+        upperColor={theme.palette.background.default}
+        lowerColor={theme.palette.background.paper}
         className={classes.waveBorder}
         animationNegativeDelay={2}
       />
