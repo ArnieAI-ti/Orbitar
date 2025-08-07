@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/Orbitar/static/js/main.41ccae99.js",
-    "static/js/804.f9a1aa3d.chunk.js": "/Orbitar/static/js/804.f9a1aa3d.chunk.js",
-    "static/js/636.44267ae4.chunk.js": "/Orbitar/static/js/636.44267ae4.chunk.js",
+    "main.js": "/Orbitar/static/js/main.d32a2830.js",
+    "static/js/804.986a7979.chunk.js": "/Orbitar/static/js/804.986a7979.chunk.js",
+    "static/js/636.b41d00ef.chunk.js": "/Orbitar/static/js/636.b41d00ef.chunk.js",
     "static/js/879.de12fbde.chunk.js": "/Orbitar/static/js/879.de12fbde.chunk.js",
     "static/css/4.b58d05c8.chunk.css": "/Orbitar/static/css/4.b58d05c8.chunk.css",
     "static/js/4.99521fd2.chunk.js": "/Orbitar/static/js/4.99521fd2.chunk.js",
@@ -21,9 +21,9 @@
     "static/js/485.f5a00895.chunk.js": "/Orbitar/static/js/485.f5a00895.chunk.js",
     "service-worker.js": "/Orbitar/service-worker.js",
     "index.html": "/Orbitar/index.html",
-    "main.41ccae99.js.map": "/Orbitar/static/js/main.41ccae99.js.map",
-    "804.f9a1aa3d.chunk.js.map": "/Orbitar/static/js/804.f9a1aa3d.chunk.js.map",
-    "636.44267ae4.chunk.js.map": "/Orbitar/static/js/636.44267ae4.chunk.js.map",
+    "main.d32a2830.js.map": "/Orbitar/static/js/main.d32a2830.js.map",
+    "804.986a7979.chunk.js.map": "/Orbitar/static/js/804.986a7979.chunk.js.map",
+    "636.b41d00ef.chunk.js.map": "/Orbitar/static/js/636.b41d00ef.chunk.js.map",
     "879.de12fbde.chunk.js.map": "/Orbitar/static/js/879.de12fbde.chunk.js.map",
     "4.b58d05c8.chunk.css.map": "/Orbitar/static/css/4.b58d05c8.chunk.css.map",
     "4.99521fd2.chunk.js.map": "/Orbitar/static/js/4.99521fd2.chunk.js.map",
@@ -42,6 +42,6 @@
     "485.f5a00895.chunk.js.map": "/Orbitar/static/js/485.f5a00895.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.41ccae99.js"
+    "static/js/main.d32a2830.js"
   ]
 }
