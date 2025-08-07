@@ -100,7 +100,7 @@ function Main(props) {
   useEffect(fetchBlogPosts, [fetchBlogPosts]);
 
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} id="root">
       {!isCookieRulesDialogOpen && (
         <CookieConsent
           handleCookieRulesDialogOpen={handleCookieRulesDialogOpen}

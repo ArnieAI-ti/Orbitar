@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, Box, Card, CardContent } from "@mui/material";
 import { withStyles } from "@mui/styles";
-import ZoomImage from "../../../shared/components/ZoomImage";
+
 
 const styles = (theme) => ({
   section: {

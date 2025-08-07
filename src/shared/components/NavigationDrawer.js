@@ -78,7 +78,7 @@ function NavigationDrawer(props) {
                 disableRipple
                 disableTouchRipple
               >
-                <ListItemIcon style={{ color: "white" }}>{element.icon}</ListItemIcon>
+                <ListItemIcon style={{ color: "white", minWidth: 40 }}>{element.icon}</ListItemIcon>
                 <ListItemText
                   primary={
                     <Typography variant="subtitle1" style={{ color: "white" }}>
@@ -103,7 +103,7 @@ function NavigationDrawer(props) {
                   disableRipple
                   disableTouchRipple
                 >
-                  <ListItemIcon style={{ color: "white" }}>{element.icon}</ListItemIcon>
+                  <ListItemIcon style={{ color: "white", minWidth: 40 }}>{element.icon}</ListItemIcon>
                   <ListItemText
                     primary={
                       <Typography variant="subtitle1" style={{ color: "white" }}>

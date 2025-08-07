@@ -29,6 +29,10 @@ const styles = (theme) => ({
       width: "2px",
       backgroundColor: theme.palette.primary.main,
       opacity: 0.3,
+      [theme.breakpoints.down("md")]: {
+        left: "20px", // Línea a la izquierda en móvil
+        transform: "none",
+      },
     },
   },
   stepContainer: {
@@ -40,6 +44,11 @@ const styles = (theme) => ({
     width: "100%",
     "&:nth-of-type(odd)": {
       flexDirection: "row-reverse",
+    },
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column", // Apilar en móvil
+      alignItems: "flex-start", // Alinear a la izquierda en móvil
+      marginBottom: theme.spacing(4),
     },
   },
   card: {
@@ -54,8 +63,9 @@ const styles = (theme) => ({
       boxShadow: theme.shadows[8],
     },
     [theme.breakpoints.down("md")]: {
-      width: "100%",
-      textAlign: "center",
+      width: "calc(100% - 60px)", // Ajustar ancho para dejar espacio a la izquierda
+      textAlign: "left", // Alinear texto a la izquierda
+      marginLeft: "40px", // Margen para el icono
     },
   },
   iconContainer: {
@@ -71,6 +81,13 @@ const styles = (theme) => ({
     justifyContent: "center",
     boxShadow: `0 0 0 4px ${theme.palette.background.default}`,
     zIndex: 1,
+    [theme.breakpoints.down("md")]: {
+      position: "absolute",
+      left: "0", // Posicionar a la izquierda
+      top: "0", // Posicionar arriba
+      transform: "translateY(0)", // Eliminar transformación
+      marginBottom: theme.spacing(2), // Espacio entre icono y texto
+    },
   },
   stepIcon: {
     fontSize: 30,
