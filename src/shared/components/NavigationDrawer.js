@@ -67,7 +67,29 @@ function NavigationDrawer(props) {
       </Toolbar>
       <List className={classes.blackList}>
         {menuItems.map((element) => {
-          if (element.link) {
+          // Modificación aquí: Usar element.onClick directamente para enlaces internos
+          if (element.link && element.link.startsWith("#")) {
+            return (
+              <ListItem
+                button
+                key={element.name}
+                onClick={element.onClick}
+                selected={selectedItem === element.name}
+                disableRipple
+                disableTouchRipple
+              >
+                <ListItemIcon style={{ color: "white" }}>{element.icon}</ListItemIcon>
+                <ListItemText
+                  primary={
+                    <Typography variant="subtitle1" style={{ color: "white" }}>
+                      {element.name}
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            );
+          } else if (element.link) {
+            // Mantener Link de react-router-dom para enlaces externos o rutas de la app
             return (
               <Link
                 key={element.name}
@@ -78,10 +100,6 @@ function NavigationDrawer(props) {
                 <ListItem
                   button
                   selected={selectedItem === element.name}
-                  /**
-                   * We disable ripple as it will make a weird animation
-                   * with primary and secondary color
-                   */
                   disableRipple
                   disableTouchRipple
                 >
