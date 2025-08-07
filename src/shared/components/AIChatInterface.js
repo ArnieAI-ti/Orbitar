@@ -105,7 +105,7 @@ function AIChatInterface(props) {
       setInput('');
 
       // Llama a tu API de Colab
-            fetch('https://c17dcac6a785.ngrok-free.app/predict', {
+            fetch(process.env.REACT_APP_API_URL + '/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
