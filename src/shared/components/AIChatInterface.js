@@ -163,9 +163,9 @@ function AIChatInterface(props) {
     <Paper className={classes.chatContainer}>
       <Box className={classes.chatHeader}>
         <Typography variant="h6">Asistente AI</Typography>
-        <Box>
-          <IconButton onClick={handleMinimize} size="small" color="inherit">
-            <MinimizeIcon />
+        <Box display="flex" alignItems="center">
+          <IconButton onClick={handleMinimize} size="small" color="inherit" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <MinimizeIcon sx={{ transform: 'translateY(-5px)' }} />
           </IconButton>
           <IconButton onClick={() => { setMessages([]); onClose(); }} size="small" color="inherit">
             <CloseIcon />
