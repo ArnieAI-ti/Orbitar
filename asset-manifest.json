@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Orbitar/static/js/main.f2e47471.js",
+    "main.js": "/Orbitar/static/js/main.f553a349.js",
     "static/js/804.c0fa29a9.chunk.js": "/Orbitar/static/js/804.c0fa29a9.chunk.js",
     "static/js/636.a0889a9b.chunk.js": "/Orbitar/static/js/636.a0889a9b.chunk.js",
     "static/js/879.de12fbde.chunk.js": "/Orbitar/static/js/879.de12fbde.chunk.js",
@@ -21,7 +21,7 @@
     "static/js/485.f5a00895.chunk.js": "/Orbitar/static/js/485.f5a00895.chunk.js",
     "service-worker.js": "/Orbitar/service-worker.js",
     "index.html": "/Orbitar/index.html",
-    "main.f2e47471.js.map": "/Orbitar/static/js/main.f2e47471.js.map",
+    "main.f553a349.js.map": "/Orbitar/static/js/main.f553a349.js.map",
     "804.c0fa29a9.chunk.js.map": "/Orbitar/static/js/804.c0fa29a9.chunk.js.map",
     "636.a0889a9b.chunk.js.map": "/Orbitar/static/js/636.a0889a9b.chunk.js.map",
     "879.de12fbde.chunk.js.map": "/Orbitar/static/js/879.de12fbde.chunk.js.map",
@@ -42,6 +42,6 @@
     "485.f5a00895.chunk.js.map": "/Orbitar/static/js/485.f5a00895.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.f2e47471.js"
+    "static/js/main.f553a349.js"
   ]
 }
