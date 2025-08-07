@@ -109,15 +109,7 @@ function VisionSection(props) {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} data-aos="fade-left">
-            <Box className={classes.imageContainer}>
-              <ZoomImage
-                src={`${process.env.PUBLIC_URL}/images/logged_out/vision_image.jpg`}
-                className={classes.image}
-                alt="Visión de Orbitar"
-              />
-            </Box>
-          </Grid>
+          
         </Grid>
       </div>
     </Box>

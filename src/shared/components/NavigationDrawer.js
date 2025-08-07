@@ -67,8 +67,8 @@ function NavigationDrawer(props) {
       </Toolbar>
       <List className={classes.blackList}>
         {menuItems.map((element) => {
-          // Modificación aquí: Usar element.onClick directamente para enlaces internos
-          if (element.link && element.link.startsWith("#")) {
+          // Modificación aquí: Usar element.onClick directamente para enlaces internos y la ruta raíz
+          if (element.link && (element.link.startsWith("#") || element.link === "/")) {
             return (
               <ListItem
                 button
