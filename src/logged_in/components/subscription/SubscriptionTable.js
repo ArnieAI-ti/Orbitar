@@ -11,17 +11,18 @@ import currencyPrettyPrint from "../../../shared/functions/currencyPrettyPrint";
 const styles = theme => ({
   tableWrapper: {
     overflowX: "auto",
-    width: "100%"
-  },
-  blackBackground: {
-    backgroundColor: theme.palette.primary.main
+    width: "100%",
+    borderRadius: theme.shape.borderRadius, // Apply global border radius
+    boxShadow: theme.shadows[3], // Subtle shadow
   },
   contentWrapper: {
     padding: theme.spacing(3),
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(2)
     },
-    width: "100%"
+    width: "100%",
+    borderRadius: theme.shape.borderRadius, // Apply global border radius
+    boxShadow: theme.shadows[3], // Subtle shadow
   },
   dBlock: {
     display: "block !important"

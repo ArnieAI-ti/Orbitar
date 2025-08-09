@@ -11,9 +11,10 @@ const styles = (theme) => ({
     boxShadow: theme.shadows[3],
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
     "&:hover": {
-      transform: "translateY(-10px)",
-      boxShadow: theme.shadows[8],
+      transform: "translateY(-5px)",
+      boxShadow: theme.shadows[5],
     },
+    borderRadius: theme.shape.borderRadius,
   },
   cardContent: {
     flexGrow: 1,

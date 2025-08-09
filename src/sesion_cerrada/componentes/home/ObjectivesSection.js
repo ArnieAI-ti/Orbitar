@@ -6,7 +6,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 const styles = (theme) => ({
   section: {
     padding: theme.spacing(10, 0),
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.default,
     backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.05) 0.5px, transparent 0.5px)`,
     backgroundSize: "15px 15px",
   },
@@ -22,8 +22,8 @@ const styles = (theme) => ({
   },
   generalObjectiveCard: {
     marginBottom: theme.spacing(6),
-    backgroundColor: theme.palette.background.default, // Un color de fondo diferente para la tarjeta
-    boxShadow: theme.shadows[5],
+    backgroundColor: theme.palette.background.paper, // Use paper background
+    boxShadow: theme.shadows[3],
     borderRadius: theme.shape.borderRadius,
   },
   specificObjectiveCard: {
@@ -34,8 +34,9 @@ const styles = (theme) => ({
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
     "&:hover": {
       transform: "translateY(-5px) scale(1.02)",
-      boxShadow: theme.shadows[8],
+      boxShadow: theme.shadows[5],
     },
+    borderRadius: theme.shape.borderRadius,
   },
   listItemIcon: {
     minWidth: "35px",

@@ -49,8 +49,6 @@ const styles = (theme) => ({
     width: "100%",
     border: "1px solid rgba(0, 0, 0, 0.23)",
     borderRadius: theme.shape.borderRadius,
-    borderTopLeftRadius: 0,
-    borderBottomLeftRadius: 0,
   },
   uploadText: {
     transition: theme.transitions.create(["color", "box-shadow", "border"], {

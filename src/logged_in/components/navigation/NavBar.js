@@ -32,8 +32,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 const styles = (theme) => ({
   appBar: {
-    boxShadow: theme.shadows[6],
-    backgroundColor: theme.palette.common.white,
+    boxShadow: theme.shadows[3], // More subtle shadow
+    backgroundColor: theme.palette.background.paper, // Use paper background
+    borderRadius: theme.shape.borderRadius, // Apply global border radius
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -82,11 +83,11 @@ const styles = (theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(9),
     },
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.background.paper,
   },
   smBordered: {
     [theme.breakpoints.down("sm")]: {
-      borderRadius: "50% !important",
+      borderRadius: theme.shape.borderRadius,
     },
   },
   menuLink: {

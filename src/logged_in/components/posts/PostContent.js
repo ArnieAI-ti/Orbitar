@@ -24,6 +24,7 @@ function PostContent(props) {
     posts,
     openAddPostModal,
     classes,
+    theme,
   } = props;
   const [page, setPage] = useState(0);
   const [isDeletePostDialogOpen, setIsDeletePostDialogOpen] = useState(false);
@@ -106,7 +107,7 @@ function PostContent(props) {
   }, [posts, onDelete, page]);
 
   return (
-    <Paper>
+    <Paper sx={{ borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[3] }}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6">Your Posts</Typography>
         <Button

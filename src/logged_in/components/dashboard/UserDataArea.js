@@ -84,7 +84,7 @@ const rows = [
 const rowsPerPage = 25;
 
 function CustomTable(props) {
-  const { pushMessageToSnackbar, classes, targets, setTargets } = props;
+  const { pushMessageToSnackbar, classes, targets, setTargets, theme } = props;
   const [order, setOrder] = useState("asc");
   const [orderBy, setOrderBy] = useState(null);
   const [page, setPage] = useState(0);
@@ -171,7 +171,7 @@ function CustomTable(props) {
   );
 
   return (
-    <Accordion>
+    <Accordion sx={{ borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[3] }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>Some user data</Typography>
       </AccordionSummary>

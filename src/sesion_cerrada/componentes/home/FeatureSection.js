@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
 
@@ -55,9 +55,9 @@ function FeatureSection(props) {
   const isWidthUpMd = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <div id="feature-section" style={{ backgroundColor: theme.palette.background.default, paddingTop: theme.spacing(10), paddingBottom: theme.spacing(15) }}>
-      <div className="container-fluid lg-p-top">
-        <Typography variant="h3" align="center" className="lg-mg-bottom">
+    <Box id="feature-section" sx={{ backgroundColor: theme.palette.background.default, py: 10 }}>
+      <div className="container-fluid">
+        <Typography variant="h3" align="center" sx={{ mb: 8 }}>
           ¿Qué hace diferente a Orbitar?
         </Typography>
         <div className="container-fluid">
@@ -84,7 +84,7 @@ function FeatureSection(props) {
           </Grid>
         </div>
       </div>
-    </div>
+    </Box>
   );
 }
 

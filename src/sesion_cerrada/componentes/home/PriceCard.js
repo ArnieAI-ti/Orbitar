@@ -11,17 +11,20 @@ const styles = (theme) => ({
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
     marginTop: theme.spacing(2),
-    border: `3px solid ${theme.palette.primary.dark}`,
-    borderRadius: theme.shape.borderRadius * 2,
+    border: `1px solid ${theme.palette.divider}`, // More subtle border
+    borderRadius: theme.shape.borderRadius, // Use global border radius
+    boxShadow: theme.shadows[3], // Subtle shadow
+    backgroundColor: theme.palette.background.paper, // Use paper background
   },
   cardHightlighted: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(4),
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4),
-    border: `3px solid ${theme.palette.primary.dark}`,
-    borderRadius: theme.shape.borderRadius * 2,
+    border: `1px solid ${theme.palette.primary.main}`, // Highlighted border
+    borderRadius: theme.shape.borderRadius, // Use global border radius
     backgroundColor: theme.palette.primary.main,
+    boxShadow: theme.shadows[6], // More prominent shadow for highlighted card
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(2),
     },

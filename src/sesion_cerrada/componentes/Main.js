@@ -16,13 +16,13 @@ AOS.init({ once: true });
 
 const styles = (theme) => ({
   wrapper: {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.background.default,
     overflowX: "hidden",
   },
 });
 
 function Main(props) {
-  const { classes } = props;
+  const { classes, theme } = props;
   const [selectedTab, setSelectedTab] = useState(null);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const [blogPosts, setBlogPosts] = useState([]);
@@ -132,7 +132,7 @@ function Main(props) {
         selectHome={selectHome}
         selectBlog={selectBlog}
       />
-      <Footer />
+      <Footer theme={theme} />
     </div>
   );
 }

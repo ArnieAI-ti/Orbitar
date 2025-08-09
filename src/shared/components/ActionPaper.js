@@ -29,7 +29,7 @@ function ActionPaper(props) {
   } = props;
   return (
     <Box pt={1}>
-      <Paper style={{ maxWidth: theme.breakpoints.values[maxWidth] }}>
+      <Paper style={{ maxWidth: theme.breakpoints.values[maxWidth], borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[3] }}>
         {title && <DialogTitle>{title}</DialogTitle>}
         {content && (
           <DialogContent

@@ -41,7 +41,7 @@ const styles = (theme) => ({
 const inputOptions = ["None", "Slow", "Normal", "Fast"];
 
 function Settings1(props) {
-  const { classes, pushMessageToSnackbar } = props;
+  const { classes, pushMessageToSnackbar, theme } = props;
   const [isSaveLoading, setIsSaveLoading] = useState(false);
   const [isDefaultLoading, setIsDefaultLoading] = useState(false);
   const [option1, setOption1] = useState("None");
@@ -155,7 +155,7 @@ function Settings1(props) {
   ];
 
   return (
-    <Accordion>
+    <Accordion sx={{ borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[3] }}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>Settings 1</Typography>
       </AccordionSummary>

@@ -12,7 +12,9 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 const styles = (theme) => ({
   section: {
     padding: theme.spacing(10, 0),
-    backgroundColor: theme.palette.background.paper, // Usar el color de fondo del papel del tema
+    backgroundColor: theme.palette.background.default, // Usar el color de fondo del tema
+    backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.05) 0.5px, transparent 0.5px)`, // Textura sutil
+    backgroundSize: "15px 15px",
   },
   sectionTitle: {
     marginBottom: theme.spacing(6),

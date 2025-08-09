@@ -5,8 +5,8 @@ import { withStyles } from "@mui/styles";
 const styles = (theme) => ({
   section: {
     padding: theme.spacing(10, 0),
-    backgroundColor: theme.palette.background.paper,
-    backgroundImage: `radial-gradient(rgba(0, 0, 0, 0.05) 0.5px, transparent 0.5px)`,
+    backgroundColor: theme.palette.background.default, // Use theme's default background
+    backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.05) 0.5px, transparent 0.5px)`,
     backgroundSize: "15px 15px",
   },
   sectionTitle: {
@@ -26,6 +26,7 @@ const styles = (theme) => ({
       transform: "translateY(-10px)",
       boxShadow: theme.shadows[10],
     },
+    borderRadius: theme.shape.borderRadius, // Apply global border radius
   },
   cardContent: {
     flexGrow: 1,

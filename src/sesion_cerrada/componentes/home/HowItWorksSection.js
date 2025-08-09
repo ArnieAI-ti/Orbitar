@@ -54,13 +54,13 @@ const styles = (theme) => ({
   card: {
     width: "calc(50% - 50px)",
     padding: theme.spacing(2),
-    boxShadow: theme.shadows[5],
+    boxShadow: theme.shadows[3],
     borderRadius: theme.shape.borderRadius,
     backgroundColor: theme.palette.background.paper, // Fondo de la tarjeta
     transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
     "&:hover": {
       transform: "translateY(-5px)",
-      boxShadow: theme.shadows[8],
+      boxShadow: theme.shadows[5],
     },
     [theme.breakpoints.down("md")]: {
       width: "calc(100% - 60px)", // Ajustar ancho para dejar espacio a la izquierda

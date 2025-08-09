@@ -1,12 +1,12 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // colors
-const primary = "#61DAFB"; // Un cian eléctrico para acentos
-const secondary = "#00BFFF"; // Otro tono de azul brillante
-const black = "#ffffff"; // El texto principal será blanco
-const darkBlack = "#f2f2f2"; // Un gris muy claro para textos secundarios
-const background = "#121826"; // Fondo azul noche
-const paper = "#1A2035"; // Un poco más claro para superficies como tarjetas
+const primary = "#8c9eff"; // Un azul suave para acentos (Indigo 200)
+const secondary = "#ff8a80"; // Un rojo coral suave (Red A100)
+const black = "#212121"; // Un negro más suave
+const darkBlack = "#424242"; // Un gris oscuro para textos secundarios
+const background = "#121212"; // Fondo muy oscuro, casi negro
+const paper = "#1e1e1e"; // Un poco más claro para superficies como tarjetas
 const warningLight = "rgba(255, 234, 0, .3)";
 const warningMain = "rgba(255, 234, 0, .5)";
 const warningDark = "rgba(255, 234, 0, .7)";
@@ -49,6 +49,9 @@ const theme = createTheme({
       disabled: "rgba(255, 255, 255, 0.5)",
     },
     spacing,
+  },
+  shape: {
+    borderRadius: 12, // Global border radius for a softer look
   },
   breakpoints: {
     values: {
@@ -113,6 +116,7 @@ const theme = createTheme({
           maxWidth: 430,
           marginLeft: spacing,
           marginRight: spacing,
+          borderRadius: 12, // Apply border radius to dialogs
         },
       },
     },
@@ -120,6 +124,7 @@ const theme = createTheme({
       styleOverrides: {
         tooltip: {
           backgroundColor: darkBlack,
+          borderRadius: 8, // Apply border radius to tooltips
         },
       },
     },
@@ -158,3 +163,4 @@ const theme = createTheme({
 });
 
 export default responsiveFontSizes(theme);
+    

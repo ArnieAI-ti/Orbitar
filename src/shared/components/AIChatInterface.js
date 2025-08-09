@@ -12,8 +12,8 @@ const styles = (theme) => ({
     height: 450,
     display: 'flex',
     flexDirection: 'column',
-    boxShadow: theme.shadows[10],
-    borderRadius: theme.shape.borderRadius * 2, // Increased border-radius
+    boxShadow: theme.shadows[3],
+    borderRadius: theme.shape.borderRadius, // Increased border-radius
     backgroundColor: theme.palette.background.paper,
     zIndex: 1000,
     overflow: 'hidden', // Ensures content respects border-radius
@@ -36,7 +36,7 @@ const styles = (theme) => ({
   messageBubble: {
     maxWidth: '80%',
     padding: theme.spacing(1.5), // Increased padding
-    borderRadius: theme.shape.borderRadius * 2, // Increased border-radius
+    borderRadius: theme.shape.borderRadius, // Increased border-radius
     marginBottom: theme.spacing(1.5), // Increased margin
     wordBreak: 'break-word',
     boxShadow: theme.shadows[1], // Subtle shadow
@@ -66,7 +66,7 @@ const styles = (theme) => ({
     zIndex: 1000,
     width: 150, // Smaller width for the minimized state
     height: 50, // Smaller height for the minimized state
-    borderRadius: theme.shape.borderRadius * 2,
+    borderRadius: theme.shape.borderRadius,
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     display: 'flex',

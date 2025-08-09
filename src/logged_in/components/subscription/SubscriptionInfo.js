@@ -19,7 +19,6 @@ function SubscriptionInfo(props) {
         variant="contained"
         color="secondary"
         onClick={openAddBalanceDialog}
-        disableElevation
       >
         Add Balance
       </Button>

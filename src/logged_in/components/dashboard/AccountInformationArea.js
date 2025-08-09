@@ -15,8 +15,8 @@ import LoopIcon from "@mui/icons-material/Loop";
 
 const styles = theme => ({
   paper: {
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[3],
   },
   toolbar: { justifyContent: "space-between" },
   scaleMinus: {

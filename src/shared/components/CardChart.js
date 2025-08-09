@@ -107,7 +107,7 @@ function CardChart(props) {
 
   const isOpen = Boolean(anchorEl);
   return (
-    <Card>
+    <Card style={{ borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[3] }}>
       <Box pt={2} px={2} pb={4}>
         <Box display="flex" justifyContent="space-between">
           <div>

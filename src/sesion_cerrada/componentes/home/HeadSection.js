@@ -31,9 +31,10 @@ const styles = (theme) => ({
     },
   },
   card: {
-    boxShadow: theme.shadows[4],
+    boxShadow: theme.shadows[3], // More subtle shadow
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
+    borderRadius: theme.shape.borderRadius, // Apply global border radius
     [theme.breakpoints.up("xs")]: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),

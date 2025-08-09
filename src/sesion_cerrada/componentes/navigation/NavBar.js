@@ -22,8 +22,9 @@ import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 
 const styles = theme => ({
   appBar: {
-    boxShadow: theme.shadows[6],
-    backgroundColor: theme.palette.background.paper
+    boxShadow: theme.shadows[3],
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: theme.shape.borderRadius,
   },
   toolbar: {
     display: "flex",

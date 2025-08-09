@@ -16,13 +16,14 @@ function Subscription(props) {
     transactions,
     classes,
     openAddBalanceDialog,
-    selectSubscription
+    selectSubscription,
+    theme
   } = props;
 
   useEffect(selectSubscription, [selectSubscription]);
 
   return (
-    <Paper>
+    <Paper sx={{ borderRadius: theme.shape.borderRadius, boxShadow: theme.shadows[3] }}>
       <List disablePadding>
         <SubscriptionInfo openAddBalanceDialog={openAddBalanceDialog} />
         <Divider className={classes.divider} />
@@ -39,4 +40,5 @@ Subscription.propTypes = {
   openAddBalanceDialog: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(Subscription);
+export default withStyles(styles, { withTheme: true })(Subscription);
+
