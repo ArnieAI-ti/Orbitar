@@ -64,7 +64,7 @@ print("PDF cargado y vectorizado correctamente")
 # ======================================================================================
 
 vectordb = Chroma(persist_directory="./marte_db", embedding_function=embeddings)
-llm = ChatVertexAI(model_name="gemini-1.5-flash", temperature=0.0)
+llm = ChatVertexAI(model_name="gemini-2.5-flash", temperature=0.0)
 
 template = '''
 Eres Caparazón, un guía digital claro, cercano y expresivo que ayuda a entender el proyecto Orbitar.
