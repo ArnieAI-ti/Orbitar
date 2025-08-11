@@ -1,0 +1,13 @@
+flask
+flask-cors
+gunicorn
+google-cloud-aiplatform
+langchain
+langchain-community
+langchain-google-genai
+chromadb
+unstructured
+pypdf
+sentence-transformers
+langchain-google-vertexai
+langchain-huggingface

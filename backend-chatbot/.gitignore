@@ -1,0 +1,6 @@
+# Ignorar archivos de credenciales y de entorno
+strong-arbor-438717-h6-e6ceb5a03a44.json
+.env
+
+# Ignorar directorios de bases de datos locales
+marte_db/
