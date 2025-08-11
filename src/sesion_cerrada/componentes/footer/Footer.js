@@ -132,7 +132,7 @@ function Footer(props) {
               Legal
             </Typography>
             <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
-              <li><Link href="#" style={{
+              <li><Link href="/privacy" style={{
                 color: theme.palette.text.secondary,
                 transition: theme.transitions.create(["color"], {
                   duration: theme.transitions.duration.shortest,
@@ -141,7 +141,7 @@ function Footer(props) {
                   color: theme.palette.primary.main,
                 },
               }}>Política de Privacidad</Link></li>
-              <li><Link href="#" style={{
+              <li><Link href="/terms" style={{
                 color: theme.palette.text.secondary,
                 transition: theme.transitions.create(["color"], {
                   duration: theme.transitions.duration.shortest,

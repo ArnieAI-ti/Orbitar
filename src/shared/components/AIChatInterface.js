@@ -180,7 +180,12 @@ function AIChatInterface(props) {
             key={index}
             className={`${classes.messageBubble} ${messageClass}`}
           >
-            <Typography variant="body2">{msg.text}</Typography>
+            <Typography
+              variant="body2"
+              dangerouslySetInnerHTML={{
+                __html: msg.text.replace(/(\d+\.\s)/g, '<br />$1').replace(/^<br \/>/, '')
+              }}
+            />
           </Box>
           );
         })}

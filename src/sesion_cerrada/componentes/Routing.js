@@ -5,6 +5,8 @@ import PropsRoute from "../../shared/components/PropsRoute";
 import Home from "./home/Home";
 import Blog from "./blog/Blog";
 import BlogPost from "./blog/BlogPost";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsOfService from "./TermsOfService";
 import useLocationBlocker from "../../shared/functions/useLocationBlocker";
 
 function Routing(props) {
@@ -32,6 +34,16 @@ function Routing(props) {
         component={Blog}
         selectBlog={selectBlog}
         blogPosts={blogPosts}
+      />
+      <PropsRoute
+        exact
+        path="/privacy"
+        component={PrivacyPolicy}
+      />
+      <PropsRoute
+        exact
+        path="/terms"
+        component={TermsOfService}
       />
       <PropsRoute path="/" component={Home} selectHome={selectHome} />
     </Switch>

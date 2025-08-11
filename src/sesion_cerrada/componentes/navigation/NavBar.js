@@ -35,15 +35,19 @@ const styles = theme => ({
     fontWeight: theme.typography.h6.fontWeight
   },
   brandText: {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: "'Inter', sans-serif",
     fontWeight: 700,
-    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)", // Añade una sombra sutil al texto
-    background: `linear-gradient(45deg, #00FFFF 30%, #00BFFF 90%)`,
+    background: `linear-gradient(90deg, #00FFFF, #00BFFF, #00FFFF)`,
+    backgroundSize: "200% auto",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
+    transition: "background-position 0.5s ease-in-out",
+    "&:hover": {
+      backgroundPosition: "-100% center",
+    },
   },
   brandTextContainer: {
-    display: "inline-block", // Necesario para que la transformación funcione correctamente
+    display: "inline-block",
     transition: "transform 0.3s ease-in-out",
     "&:hover": {
       transform: "scale(1.05)",
@@ -83,10 +87,10 @@ function NavBar(props) {
 
   const menuItems = [
     {
-      link: "/",
+      link: "#",
       name: "Inicio",
       icon: <HomeIcon style={{ color: "white" }} />,
-      onClick: () => scrollToSection("root") // Asumiendo que el id del inicio es 'root'
+      onClick: () => scrollToSection("root")
     },
     {
       link: "#vision-section",
@@ -98,7 +102,7 @@ function NavBar(props) {
       link: "#problem-section",
       name: "Desafíos",
       icon: <TrendingUpIcon style={{ color: "white" }} />,
-      onClick: () => scrollToSection("problem-section", 120) // Ajuste de 120px más arriba
+      onClick: () => scrollToSection("problem-section", 120)
     },
     {
       link: "#how-it-works-section",
@@ -130,18 +134,18 @@ function NavBar(props) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div>
-            <Box className={classes.brandTextContainer}>
-              <Typography
-                variant="h4"
-                className={classes.brandText}
-                display="inline"
-                color="primary"
-                onClick={() => scrollToSection("root")}
-                style={{ cursor: "pointer" }}
-              >
-                Orbitar
-              </Typography>
-            </Box>
+            <a href="/" className={classes.noDecoration}>
+              <Box className={classes.brandTextContainer}>
+                <Typography
+                  variant="h4"
+                  className={classes.brandText}
+                  display="inline"
+                  style={{ cursor: "pointer" }}
+                >
+                  Orbitar
+                </Typography>
+              </Box>
+            </a>
           </div>
           <div>
             <Hidden mdUp>
@@ -161,7 +165,10 @@ function NavBar(props) {
                       key={element.name}
                       href={element.link}
                       className={classes.noDecoration}
-                      onClick={element.onClick}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        element.onClick();
+                      }}
                     >
                       <Button
                         color="secondary"

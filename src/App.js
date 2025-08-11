@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense, lazy, useState } from "react";
+import React, { Fragment, Suspense, lazy, useState, useEffect } from "react";
 import { ThemeProvider, StyledEngineProvider, CssBaseline, Fab } from "@mui/material";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SmartToyIcon from '@mui/icons-material/SmartToy';
@@ -26,6 +26,27 @@ function App() {
   const handleMinimizeStatusChange = (minimizedStatus) => {
     setIsChatMinimized(minimizedStatus);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top on every page load
+  }, []);
+
+  // New useEffect for Ctrl+R to scroll to top
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Check for Ctrl + R
+      if (event.ctrlKey && event.key === 'r') {
+        event.preventDefault(); // Prevent browser refresh
+        window.scrollTo(0, 0); // Scroll to top instantly
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []); // Empty dependency array means this runs once on mount and cleans up on unmount
 
   return (
     <BrowserRouter>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Grid, Typography, Card, Button, Hidden, Box } from "@mui/material";
@@ -35,6 +35,9 @@ const styles = (theme) => ({
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
     borderRadius: theme.shape.borderRadius, // Apply global border radius
+    transition: "transform 0.3s ease-in-out", // Smooth transition for hover effects
+    position: "relative", // Needed for overlay positioning
+    overflow: "hidden", // Hide overflow of blur effect
     [theme.breakpoints.up("xs")]: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
@@ -61,6 +64,19 @@ const styles = (theme) => ({
       width: "auto",
     },
   },
+  blurOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backdropFilter: "blur(0px)", // Initial state, no blur
+    transition: "backdropFilter 0.3s ease-in-out",
+    pointerEvents: "none", // Allow clicks to pass through
+    "&:hover": {
+      backdropFilter: "blur(5px)", // Apply blur on hover
+    },
+  },
   wrapper: {
     position: "relative",
     backgroundColor: theme.palette.background.default,
@@ -70,6 +86,8 @@ const styles = (theme) => ({
     width: "100%",
     height: "100%",
     border: "none",
+    borderRadius: theme.shape.borderRadius,
+    transition: "transform 0.1s linear", // Smooth transition for parallax
   },
   container: {
     marginTop: theme.spacing(6),
@@ -97,6 +115,38 @@ const styles = (theme) => ({
 function HeadSection(props) {
   const { classes, theme } = props;
   const isWidthUpLg = useMediaQuery(theme.breakpoints.up("lg"));
+  const iframeRef = useRef(null);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 64; // Navbar height
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (iframeRef.current) {
+        const scrollY = window.scrollY;
+        // Adjust the parallax speed as needed (e.g., scrollY * 0.2)
+        iframeRef.current.style.transform = `translateY(${scrollY * 0.1}px)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Fragment>
@@ -137,7 +187,7 @@ function HeadSection(props) {
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
-                          href="#vision-section"
+                          onClick={() => scrollToSection("vision-section")}
                         >
                           Descubre Qué es Orbitar
                         </Button>
@@ -150,7 +200,9 @@ function HeadSection(props) {
                         title="header-animation"
                         src={`${process.env.PUBLIC_URL}/images/logged_out/headerImage.html`}
                         className={classes.image}
+                        ref={iframeRef}
                       />
+                      <div className={classes.blurOverlay}></div>
                     </Grid>
                   </Hidden>
                 </Box>

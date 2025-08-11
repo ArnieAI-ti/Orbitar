@@ -1,6 +1,10 @@
 import React from "react";
 import { Grid, Typography, Card, CardContent, Box } from "@mui/material";
 import { withStyles } from "@mui/styles";
+import Build from "@mui/icons-material/Build";
+import School from "@mui/icons-material/School";
+import Business from "@mui/icons-material/Business";
+import Visibility from "@mui/icons-material/Visibility";
 
 const styles = (theme) => ({
   section: {
@@ -47,18 +51,22 @@ function ProblemSection(props) {
 
   const problemCards = [
     {
+      icon: <Build style={{ fontSize: 20, color: "#4caf50" }} />,
       title: "Técnicos y de Uso",
       description: "Las herramientas actuales son complejas, requieren programación y no visualizan el funcionamiento de un sistema a partir de datos reales."
     },
     {
+      icon: <School style={{ fontSize: 20, color: "#4caf50" }} />,
       title: "Educativos",
       description: "Enseñar automatización es un reto. Faltan herramientas visuales y prácticas que permitan experimentar sin necesidad de programar."
     },
     {
+      icon: <Business style={{ fontSize: 20, color: "#4caf50" }} />,
       title: "Empresariales",
       description: "Es difícil para las empresas mostrar el valor de sus soluciones tecnológicas de forma rápida y convincente a clientes no técnicos."
     },
     {
+      icon: <Visibility style={{ fontSize: 20, color: "#4caf50" }} />,
       title: "Falta de Visibilidad",
       description: "Muchos sistemas son complejos de interpretar; las soluciones actuales requieren conocimientos técnicos o programación para entender cómo operan."
     }
@@ -75,6 +83,7 @@ function ProblemSection(props) {
             <Grid item xs={12} md={4} key={index} data-aos="fade-up" data-aos-delay={index * 100}>
               <Card className={classes.card}>
                 <CardContent className={classes.cardContent}>
+                  {card.icon}
                   <Typography variant="h5" className={classes.title}>{card.title}</Typography>
                   <Typography variant="body1" color="text.secondary">
                     {card.description}
@@ -90,5 +99,3 @@ function ProblemSection(props) {
 }
 
 export default withStyles(styles)(ProblemSection);
-
-
